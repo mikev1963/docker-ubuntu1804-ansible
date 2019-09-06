@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-LABEL maintainer="Jeff Geerling"
+LABEL maintainer="Michael A. Ventarola"
 
 ENV pip_packages "ansible"
 
@@ -37,6 +37,7 @@ RUN set -xe \
   && groupadd -r ${ANSIBLE_USER} \
   && useradd -m -g ${ANSIBLE_USER} ${ANSIBLE_USER} \
   && usermod -aG ${SUDO_GROUP} ${ANSIBLE_USER} \
+  && echo "ansible:password" | chpasswd \
   && sed -i "/^%${SUDO_GROUP}/s/ALL\$/NOPASSWD:ALL/g" /etc/sudoers
 
 VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]

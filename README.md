@@ -1,20 +1,10 @@
 # Ubuntu 18.04 LTS (Bionic) Ansible Test Image
 
-[![Docker Automated build](https://img.shields.io/docker/automated/geerlingguy/docker-ubuntu1804-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/geerlingguy/docker-ubuntu1804-ansible/)
+[![Build Status](https://travis-ci.org/mikev1963/docker-ubuntu1804-ansible.svg?branch=master)](https://travis-ci.org/mikev1963/docker-ubuntu1804-ansible)
+
+# This role was inspired by Jeff Geerling.  I added an ansible user for testing as a non-root account.
 
 Ubuntu 18.04 LTS (Bionic) Docker container for Ansible playbook and role testing.
-
-## Tags
-
-  - `latest`: Latest stable version of Ansible.
-  - `testing`: Same as `latest`, but with additional testing dependencies, including:
-    - `yamllint`
-    - `ansible-lint`
-    - `flake8`
-    - `testinfra`
-    - `molecule`
-
-The latest tag is a lightweight image for basic validation of Ansible playbooks. The `testing` tag also includes a comprehensive suite of Ansible and infrastructure testing tools in case you want them pre-installed.
 
 ## How to Build
 
@@ -43,4 +33,4 @@ I use Docker to test my Ansible roles and playbooks on multiple OSes using CI to
 
 ## Author
 
-Created in 2018 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+Created in 2018 by Michael A. Ventarola
